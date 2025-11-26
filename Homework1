@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Asxatanqayin
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Message msg;
+            
+            msg = new ErrorMessage();
+            msg.Print();
+
+            msg=new SuccessMessage();
+            msg.Print();
+
+
+
+        }
+    }
+
+    class Message
+    {
+        public virtual void Print()
+        {
+            Console.WriteLine("Generic message");
+        }
+    }
+
+    class ErrorMessage : Message
+    {
+        public override void Print()
+        {
+            Console.WriteLine("Error occurred!");
+        }
+    }
+    class SuccessMessage : Message
+    {
+        public override void Print()
+        {
+            Console.WriteLine("Operation successful!");
+        }
+    }
+
+
+
+
+}
