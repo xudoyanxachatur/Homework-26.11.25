@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Asxatanqayin
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Animal[] animals = new Animal[]
+            {
+                new Dog { Name = "Dog" },
+                new Cat { Name = "Cat" },
+                new Cow { Name = "Cow" }
+            };
+            for(int i = 0; i < animals.Length; i++)
+            {
+                Console.Write(animals[i].Name + " says: ");
+                animals[i].Speak();
+            }
+        }
+
+        class Animal
+        {
+            public string Name { get; set; }
+            public virtual void Speak()
+            {
+                Console.WriteLine("Animal sound");
+            }
+        }
+
+        class Dog : Animal
+        {
+            public override void Speak()
+            {
+                Console.WriteLine("Woof");
+            }
+        }
+        class Cat : Animal
+        {
+            public override void Speak()
+            {
+                Console.WriteLine("Meow");
+            }
+        }
+        class Cow : Animal
+        {
+            public override void Speak()
+            {
+                Console.WriteLine("Moo");
+            }
+        }
+    }
+}
